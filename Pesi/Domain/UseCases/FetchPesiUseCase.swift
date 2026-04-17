@@ -7,7 +7,7 @@
 
 import Foundation
 
-class FetchPesiUseCase  {
+final class FetchPesiUseCase  {
     let repository: PesoRepositoryInterface
     
     init(repository: PesoRepositoryInterface) {

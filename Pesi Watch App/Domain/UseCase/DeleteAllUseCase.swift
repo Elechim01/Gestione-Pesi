@@ -6,3 +6,16 @@
 //
 
 import Foundation
+
+final class DeleteAllUseCase {
+    
+    private let repository: PesoRepositoryInterface
+    
+    init(repository: PesoRepositoryInterface) {
+        self.repository = repository
+    }
+    
+    func execute() throws {
+        try repository.clearAll()
+    }
+}

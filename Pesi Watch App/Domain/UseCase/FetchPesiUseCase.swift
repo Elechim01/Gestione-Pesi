@@ -6,3 +6,15 @@
 //
 
 import Foundation
+
+class FetchPesiUseCase  {
+    let repository: PesoRepositoryInterface
+    
+    init(repository: PesoRepositoryInterface) {
+        self.repository = repository
+    }
+    
+    func execute() throws -> [PesoModel] {
+        try repository.fetchData()
+    }
+}

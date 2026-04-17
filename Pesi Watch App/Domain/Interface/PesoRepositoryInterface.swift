@@ -6,3 +6,8 @@
 //
 
 import Foundation
+protocol PesoRepositoryInterface {
+    func fetchData() throws -> [PesoModel]
+    func insertData(models: [PesoModel]) throws
+    func clearAll() throws
+}

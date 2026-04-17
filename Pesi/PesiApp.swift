@@ -10,36 +10,44 @@ import SwiftData
 
 @main
 struct PesiApp: App {
-    let container: ModelContainer?
-    let di: DependecyInjection?
     
-    init() {
-       do {
-            let schema = Schema([PesoDTO.self])
-            let config = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
-            
-            let container = try ModelContainer(for: schema, configurations: [config])
-            self.container = container
-            self.di = DependecyInjection(modelContext: container.mainContext)
-        } catch {
-            // Qui invece di crashare, logghiamo l'errore
-            print("Errore critico SwiftData: \(error)")
-            container = nil
-            di = nil
-        }
-    }
+    @State private var coordinator = AppCoordinator()
     
     var body: some Scene {
         WindowGroup {
-            if let di = di {
-                // Se la DI è pronta, partiamo col ViewModel
-                ContentView(homeViewModel: di.createHomeViewModel())
-                    .modelContainer(container!)
-            } else {
-                // Schermata di fallback se il database esplode
-                ContentUnavailableView("Errore Database",
-                                       systemImage: "exclamationmark.triangle",
-                                       description: Text("Non è stato possibile inizializzare l'archivio. serve più spazio sul disco"))
+            Group {
+                switch coordinator.state {
+                case .initializing:
+                    ProgressView("Avvio l'app ...")
+                case .locked:
+                    LockedView()
+                case .error(let messaggio):
+                    ContentUnavailableView(
+                        "Errore Critico",
+                        systemImage: "exclamationmark.triangle",
+                        description: Text(messaggio)
+                    )
+                case .authorized:
+                    if let di = coordinator.di {
+                        HomeView(homeViewModel: di.createHomeViewModel())
+                    }
+                case .loading:
+                    ProgressView("Caricamento...")
+                }
+            }
+            .task {
+                await coordinator.checkAuthentication()
+            }
+            
+        }
+    }
+    // TODO: MOVE IN SEPARATE VIEW
+    @ViewBuilder
+    func LockedView() -> some View {
+        VStack {
+            Image(systemName: "lock.fill").font(.largeTitle)
+            Button("Sblocca App") {
+                Task { await coordinator.checkAuthentication() }
             }
         }
     }

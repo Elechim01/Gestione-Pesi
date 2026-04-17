@@ -13,6 +13,7 @@ protocol PesoDataSourceProtocol {
     func inserisci(_ dto: PesoDTO) throws
     func elimina(_ dto: PesoDTO) throws
     func eliminaTutto() throws
+    func inserisciMolti(_ dtos: [PesoDTO]) throws
 }
 
 protocol SwiftDataDataSource: PesoDataSourceProtocol {
@@ -48,6 +49,28 @@ final class PesoDataSource: SwiftDataDataSource {
         }
 
        try salva()
+    }
+    
+    // Nel tuo PesoDataSource
+    func inserisciMolti(_ dtos: [PesoDTO]) throws {
+        for dto in dtos {
+            // Esegui solo l'inserimento o l'aggiornamento in memoria
+            let idCercato = dto.id
+            let fetchDescriptor = FetchDescriptor<PesoDTO>(predicate: #Predicate { $0.id == idCercato })
+            
+            if let esiste = try modelContext.fetch(fetchDescriptor).first {
+                esiste.numero = dto.numero
+                esiste.numero = dto.numero
+                esiste.colore = dto.colore
+                esiste.piramidale = dto.piramidale
+                esiste.min = dto.min
+                esiste.max = dto.max
+                esiste.normal = dto.normal
+            } else {
+                modelContext.insert(dto)
+            }
+        }
+        try salva()
     }
     
     func elimina(_ dto: PesoDTO) throws {

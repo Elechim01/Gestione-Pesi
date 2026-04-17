@@ -6,3 +6,16 @@
 //
 
 import Foundation
+
+final class AddPesiUseCase {
+    
+    private let repository: PesoRepositoryInterface
+    
+    init(repository: PesoRepositoryInterface) {
+        self.repository = repository
+    }
+    
+    func execute(models: [PesoModel]) throws {
+        try repository.insertData(models: models)
+    }
+}

@@ -9,10 +9,10 @@ import Foundation
 import SwiftUI
 
 struct PesoModel: Identifiable {
-    var id: String
-    let numero: Int
-    let colore: Color
-    let piramidale: Bool
+    var id: String?
+    let numero: Int?
+    let colore: Color?
+    let piramidale: Bool?
     let min: Int?
     let max: Int?
     let normal: Int?
@@ -25,5 +25,15 @@ struct PesoModel: Identifiable {
         self.min = min
         self.max = max
         self.normal = normal
+    }
+    
+    init(){
+        id = nil
+        numero = nil
+        colore = nil
+        piramidale = nil
+        min = nil
+        max = nil
+        normal = nil
     }
 }

@@ -7,33 +7,42 @@
 
 import SwiftUI
 import SwiftData
-
+/*
 struct ContentView: View {
-    @State private var homeViewModel: HomeViewModel
+    // @State private var homeViewModel: HomeViewModel
+   
     
-    init(homeViewModel: HomeViewModel) {
-        self.homeViewModel = homeViewModel
-    }
+    /* init(homeViewModel: HomeViewModel) {
+     self.homeViewModel = homeViewModel
+     }*/
     
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        Group {
+            switch coordinator.state {
+            case .locked:
+                LockedView()
+            case .loading:
+                ProgressView()
+            case .authorized:
+                HomeView()
+            }
         }
-        .padding()
         .task {
-           await homeViewModel.auth()
+            await coordinator.checkAuthentication()
         }
     }
+    
+    
 }
 
 #Preview {
+    /*
     let config = ModelConfiguration(isStoredInMemoryOnly: true)
     let container = try! ModelContainer(for: PesoDTO.self, configurations: config)
     
     // 2. Usiamo la tua DI per creare il ViewModel
     let di = DependecyInjection(modelContext: container.mainContext)
-    ContentView(homeViewModel:  di.createHomeViewModel() )
+    ContentView(homeViewModel:  di.createHomeViewModel() )*/
+    ContentView()
 }
+*/

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class AddPesiUseCase {
+final class AddPesiUseCase {
     
     private let repository: PesoRepositoryInterface
     

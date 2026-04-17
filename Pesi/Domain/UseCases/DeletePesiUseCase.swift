@@ -7,7 +7,7 @@
 
 import Foundation
 
-class DeletePesiUseCase {
+final class DeletePesiUseCase {
     
     private let repository: PesoRepositoryInterface
     

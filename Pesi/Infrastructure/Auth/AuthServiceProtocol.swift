@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+protocol AuthServiceProtocol {
+    func authenticate() async throws -> Bool
+}

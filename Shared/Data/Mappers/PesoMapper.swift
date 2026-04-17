@@ -29,10 +29,10 @@ final class PesoMapper {
     /// - Parameter model: L'entry creata da UI
     /// - Returns: Un `PesoDTO` pronta per essere salvata
     static func map(_ model: PesoModel) -> PesoDTO {
-        PesoDTO(id: model.id,
-                numero: model.numero,
-                colore: model.colore.toHex(),
-                piramidale: model.piramidale,
+        PesoDTO(id: model.id ?? "",
+                numero: model.numero ?? 0,
+                colore: model.colore?.toHex() ?? "",
+                piramidale: model.piramidale ?? false,
                 min: model.min,
                 max: model.max,
                 normal: model.normal)
@@ -41,7 +41,7 @@ final class PesoMapper {
     /// Converte un oggetto per il passaggio al watch
     /// - Parameter model: L'entry creata da UI
     /// - Returns: Un `PesoTransfer` pronta per essere inviata al watch
-    static func map(dtoForTranfer dto: PesoDTO) -> PesoTransfer {
+    static func map(dtoForTransfer dto: PesoDTO) -> PesoTransfer {
         PesoTransfer(id: dto.id,
                      numero: dto.numero,
                      colore: dto.colore,
@@ -49,5 +49,19 @@ final class PesoMapper {
                      min: dto.min,
                      max: dto.max,
                      normal: dto.normal)
+    }
+    
+    
+    /// Converte un oggetto per il passaggio al watch
+    /// - Parameter transferForDto: L'entry passata da IPhone
+    /// - Returns: Un `PesoDTO` pronta per essere salvata
+    static func map(transferForDto transfer: PesoTransfer) -> PesoDTO {
+        PesoDTO(id: transfer.id,
+                numero: transfer.numero,
+                colore: transfer.colore,
+                piramidale: transfer.piramidale,
+                min: transfer.min,
+                max: transfer.max,
+                normal: transfer.normal)
     }
 }

@@ -7,7 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C40BFADD2F8CF2A500992216 /* ElechimCore in Frameworks */ = {isa = PBXBuildFile; productRef = C40BFADC2F8CF2A500992216 /* ElechimCore */; };
+		C40BFAE72F8CF9E600992216 /* AllMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40BFAE62F8CF9E600992216 /* AllMock.swift */; };
+		C40BFAE82F8CF9E600992216 /* AllMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40BFAE62F8CF9E600992216 /* AllMock.swift */; };
+		C40BFAEF2F8D2F1700992216 /* PesoRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40BFAEE2F8D2F1600992216 /* PesoRow.swift */; };
+		C40BFAF02F8D2F1700992216 /* PesoRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40BFAEE2F8D2F1600992216 /* PesoRow.swift */; };
 		C4B330E02F8799740007CFA7 /* Pesi Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = C4B330DF2F8799740007CFA7 /* Pesi Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C4B3319A2F87ECBA0007CFA7 /* ElechimCore in Frameworks */ = {isa = PBXBuildFile; productRef = C4B331992F87ECBA0007CFA7 /* ElechimCore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +69,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C40BFAE62F8CF9E600992216 /* AllMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllMock.swift; sourceTree = "<group>"; };
+		C40BFAEE2F8D2F1600992216 /* PesoRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PesoRow.swift; sourceTree = "<group>"; };
 		C4B330BC2F8799710007CFA7 /* Pesi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pesi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4B330C92F8799740007CFA7 /* PesiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PesiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4B330D32F8799740007CFA7 /* PesiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PesiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,7 +79,58 @@
 		C4B330F82F8799760007CFA7 /* Pesi Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pesi Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		C40BFAB32F8CEC4700992216 /* Exceptions for "Data" folder in "Pesi Watch App" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				DataSources/PesoDataSource.swift,
+				Mappers/DTOs/PesoDTO.swift,
+				Mappers/DTOs/PesoTransfer.swift,
+				Mappers/PesoMapper.swift,
+			);
+			target = C4B330DE2F8799740007CFA7 /* Pesi Watch App */;
+		};
+		C40BFAB82F8CEC8300992216 /* Exceptions for "Domain" folder in "Pesi Watch App" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Entities/Peso.swift,
+			);
+			target = C4B330DE2F8799740007CFA7 /* Pesi Watch App */;
+		};
+		C40BFAD52F8CF24100992216 /* Exceptions for "Extensions" folder in "Pesi Watch App" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Extensions.swift,
+			);
+			target = C4B330DE2F8799740007CFA7 /* Pesi Watch App */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		C40BFAAB2F8CEBF500992216 /* Data */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				C40BFAB32F8CEC4700992216 /* Exceptions for "Data" folder in "Pesi Watch App" target */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		C40BFAB62F8CEC7100992216 /* Domain */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				C40BFAB82F8CEC8300992216 /* Exceptions for "Domain" folder in "Pesi Watch App" target */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		C40BFAD22F8CF23700992216 /* Extensions */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				C40BFAD52F8CF24100992216 /* Exceptions for "Extensions" folder in "Pesi Watch App" target */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		C4B330BE2F8799710007CFA7 /* Pesi */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = Pesi;
@@ -109,6 +168,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4B3319A2F87ECBA0007CFA7 /* ElechimCore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,6 +190,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C40BFADD2F8CF2A500992216 /* ElechimCore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,15 +211,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C40BFA9F2F8CEBE200992216 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				C40BFAEC2F8D22BF00992216 /* Presentation */,
+				C40BFAE52F8CF9DB00992216 /* Mock */,
+				C40BFAD22F8CF23700992216 /* Extensions */,
+				C40BFAB62F8CEC7100992216 /* Domain */,
+				C40BFAAB2F8CEBF500992216 /* Data */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		C40BFAE52F8CF9DB00992216 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				C40BFAE62F8CF9E600992216 /* AllMock.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		C40BFAEC2F8D22BF00992216 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				C40BFAED2F8D2F0200992216 /* Components */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		C40BFAED2F8D2F0200992216 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				C40BFAEE2F8D2F1600992216 /* PesoRow.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		C4B330B32F8799700007CFA7 = {
 			isa = PBXGroup;
 			children = (
+				C40BFA9F2F8CEBE200992216 /* Shared */,
 				C4B330BE2F8799710007CFA7 /* Pesi */,
 				C4B330CC2F8799740007CFA7 /* PesiTests */,
 				C4B330D62F8799740007CFA7 /* PesiUITests */,
 				C4B330E32F8799740007CFA7 /* Pesi Watch App */,
 				C4B330F12F8799760007CFA7 /* Pesi Watch AppTests */,
 				C4B330FB2F8799760007CFA7 /* Pesi Watch AppUITests */,
+				C4B331982F87ECBA0007CFA7 /* Frameworks */,
 				C4B330BD2F8799710007CFA7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -174,6 +273,13 @@
 				C4B330F82F8799760007CFA7 /* Pesi Watch AppUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		C4B331982F87ECBA0007CFA7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,10 +300,14 @@
 				C4B330E22F8799740007CFA7 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
+				C40BFAAB2F8CEBF500992216 /* Data */,
+				C40BFAB62F8CEC7100992216 /* Domain */,
+				C40BFAD22F8CF23700992216 /* Extensions */,
 				C4B330BE2F8799710007CFA7 /* Pesi */,
 			);
 			name = Pesi;
 			packageProductDependencies = (
+				C4B331992F87ECBA0007CFA7 /* ElechimCore */,
 			);
 			productName = Pesi;
 			productReference = C4B330BC2F8799710007CFA7 /* Pesi.app */;
@@ -266,6 +376,7 @@
 			);
 			name = "Pesi Watch App";
 			packageProductDependencies = (
+				C40BFADC2F8CF2A500992216 /* ElechimCore */,
 			);
 			productName = "Pesi Watch App";
 			productReference = C4B330DF2F8799740007CFA7 /* Pesi Watch App.app */;
@@ -360,6 +471,9 @@
 			);
 			mainGroup = C4B330B32F8799700007CFA7;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				C4B331972F87ECB00007CFA7 /* XCLocalSwiftPackageReference "../ElechimCore" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = C4B330BD2F8799710007CFA7 /* Products */;
 			projectDirPath = "";
@@ -425,6 +539,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C40BFAF02F8D2F1700992216 /* PesoRow.swift in Sources */,
+				C40BFAE72F8CF9E600992216 /* AllMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,6 +562,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C40BFAEF2F8D2F1700992216 /* PesoRow.swift in Sources */,
+				C40BFAE82F8CF9E600992216 /* AllMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -639,7 +757,7 @@
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 26.2;
+				WATCHOS_DEPLOYMENT_TARGET = 10;
 			};
 			name = Debug;
 		};
@@ -673,7 +791,7 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				VALIDATE_PRODUCT = YES;
-				WATCHOS_DEPLOYMENT_TARGET = 26.2;
+				WATCHOS_DEPLOYMENT_TARGET = 10;
 			};
 			name = Release;
 		};
@@ -688,12 +806,13 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Pesi;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "Consenti l'accesso a FaceID";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight $(MARKETING_VERSION)";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 26;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -723,12 +842,13 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Pesi;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "Consenti l'accesso a FaceID";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight $(MARKETING_VERSION)";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 26;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -999,6 +1119,26 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		C4B331972F87ECB00007CFA7 /* XCLocalSwiftPackageReference "../ElechimCore" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../ElechimCore;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C40BFADC2F8CF2A500992216 /* ElechimCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C4B331972F87ECB00007CFA7 /* XCLocalSwiftPackageReference "../ElechimCore" */;
+			productName = ElechimCore;
+		};
+		C4B331992F87ECBA0007CFA7 /* ElechimCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C4B331972F87ECB00007CFA7 /* XCLocalSwiftPackageReference "../ElechimCore" */;
+			productName = ElechimCore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C4B330B42F8799700007CFA7 /* Project object */;
 }
