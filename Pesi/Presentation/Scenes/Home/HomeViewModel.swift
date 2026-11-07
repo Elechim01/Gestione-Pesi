@@ -38,7 +38,9 @@ class HomeViewModel {
     
     func fetchPesi() {
         do {
-            pesi = try fetchPesiUseCase.execute()
+            let fetchedPesi = try fetchPesiUseCase.execute()
+            self.pesi = fetchedPesi.sorted(by: { ($0.numero ?? 0 ) < ($1.numero ?? 1)})
+           
         } catch  {
             Utils.showError(alertMessage: &errorMessage, showAlert: &showError, from: error)
         }

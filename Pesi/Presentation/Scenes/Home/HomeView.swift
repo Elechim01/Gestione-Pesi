@@ -21,7 +21,7 @@ struct HomeView: View {
     var body: some View {
         NavigationStack {
             List{
-                ForEach(homeViewModel.pesi.sorted(by: { ($0.numero ?? 0 ) < ($1.numero ?? 1)}),id:\.id) { pesi in
+                ForEach(homeViewModel.pesi,id:\.id) { pesi in
                     Button {
                         self.editPeso = pesi
                     } label: {

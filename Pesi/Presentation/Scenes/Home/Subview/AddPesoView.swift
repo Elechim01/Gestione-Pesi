@@ -19,6 +19,7 @@ struct AddPesoView: View {
     @State private var normal: Int
     @State private var id: String?
     @Environment(\.dismiss) var dismiss
+    private var range = 0...150
     
     init(pesoModel: PesoModel? = nil) {
         id = pesoModel?.id
@@ -104,17 +105,17 @@ struct AddPesoView: View {
                     if isPiramidale {
                         // Picker compatti (stile Menu) visto che non abbiamo la navigazione
                         Picker("Minimo", selection: $min) {
-                            ForEach(0...100, id: \.self) { Text("\($0) kg").tag($0) }
+                            ForEach(range, id: \.self) { Text("\($0) kg").tag($0) }
                         }
                         .pickerStyle(.menu)
                         
                         Picker("Massimo", selection: $max) {
-                            ForEach(0...100, id: \.self) { Text("\($0) kg").tag($0) }
+                            ForEach(range, id: \.self) { Text("\($0) kg").tag($0) }
                         }
                         .pickerStyle(.menu)
                     } else {
                         Picker("Carico", selection: $normal) {
-                            ForEach(0...100, id: \.self) { Text("\($0) kg").tag($0) }
+                            ForEach(range, id: \.self) { Text("\($0) kg").tag($0) }
                         }
                         .pickerStyle(.menu)
                     }
